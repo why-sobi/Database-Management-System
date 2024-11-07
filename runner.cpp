@@ -80,12 +80,11 @@ void getPlayersContent(PlayerBST &players)
 {
     std::ifstream file("Players.txt");
     std::string id, name, number, email, password, line, curr;
-    int i = 5;
-    while (std::getline(file, line, '\n') && i--)
+    while (std::getline(file, line, '\n'))
     {
-        // int temp = rand() % 1001;
-        // if (temp >= (56 * 10 + 100))
-        // {
+        int temp = rand() % 1001;
+        if (temp >= (56 * 10 + 100))
+        {
         int commas = 0;
         for (char c : line)
         {
@@ -116,7 +115,7 @@ void getPlayersContent(PlayerBST &players)
         curr = "";
         // std::cout << player << '\n';
         players.insert(player);
-        // }
+        }
     }
     file.close();
 }
